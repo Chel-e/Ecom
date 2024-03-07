@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecom.ecom.entites.Client;
 import com.ecom.ecom.services.ClientService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping (value = "/clients")
@@ -21,4 +23,9 @@ public class ClientResource {
         List<Client> list = clientService.findAll();
         return ResponseEntity.ok().body(list);
     }
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
+    
 }

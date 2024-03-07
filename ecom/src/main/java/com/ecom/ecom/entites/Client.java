@@ -15,17 +15,25 @@ public class Client implements Serializable {
     private Date birthDate;
     private String email;
     private String password;
-    private Float balance;
+    private Double balance;
 
     public Client() {
 
     }
     public Client(String firstName, String lastName, Date birthDate, String email, String password) {
+        id = null;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.email = email;
         this.password = password;
+        balance = 0.0;
+    }
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
     public String getFirstName() {
         return firstName;
@@ -57,10 +65,10 @@ public class Client implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public Float getBalance() {
+    public Double getBalance() {
         return balance;
     }
-    public void setBalance(Float balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
     @Override
