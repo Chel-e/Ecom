@@ -2,7 +2,7 @@ package com.ecom.ecom.entites;
 
 import java.util.List;
 
-public class product {
+public class Product {
     private String id;
     private String name;
     private String description;
@@ -11,10 +11,10 @@ public class product {
     private List<String> images;
     private Double price;
 
-    public product() {
+    public Product() {
     }
 
-    public product(String id, String name, String description, List<String> category, Integer quantity,
+    public Product(String id, String name, String description, List<String> category, Integer quantity,
             List<String> images, Double price) {
         this.id = id;
         this.name = name;
@@ -97,7 +97,7 @@ public class product {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        product other = (product) obj;
+        Product other = (Product) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
