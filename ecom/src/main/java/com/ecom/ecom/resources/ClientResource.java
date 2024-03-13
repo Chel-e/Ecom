@@ -19,9 +19,9 @@ public class ClientResource {
     @Autowired
     private ClientService clientService;
     @GetMapping
-    public ResponseEntity<List<Client>> findAll() {
+    public String findAll() {
         List<Client> list = clientService.findAll();
-        return ResponseEntity.ok().body(list);
+        return list.toString();
     }
     @GetMapping("/")
     public String index() {
