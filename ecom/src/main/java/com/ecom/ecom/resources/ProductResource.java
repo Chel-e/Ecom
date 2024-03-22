@@ -8,22 +8,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ecom.ecom.entites.Client;
-import com.ecom.ecom.services.ClientService;
+import com.ecom.ecom.entites.Product;
+import com.ecom.ecom.services.ProductService;
 
 @RestController
-@RequestMapping (value = "/clients")
-public class ClientResource {
+@RequestMapping (value = "/products")
+public class ProductResource {
     @Autowired
-    private ClientService clientService;
+    private ProductService productService;
     @GetMapping
-    public ResponseEntity<List<Client>> findAll() {
-        List<Client> list = clientService.findAll();
+    public ResponseEntity<List<Product>> findAll() {
+        List<Product> list = productService.findAll();
         return ResponseEntity.ok().body(list);
     }
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
-    
 }
